@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String USERNAME = "username";
     final String LOG_TAG = "CS";
     SharedPreferences sp;
     SharedPreferences.Editor sp_editor;
@@ -39,11 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         user_info = new ClientInfo();
         server = new Server(user_info, MainActivity.this);
-        //TODO
+        //TODO duprecated???
         sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-
         getViews();
-
         getUserName();
     }
 
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             getUserName();
         }
 
-        String temp_username = data.getStringExtra("username");
+        String temp_username = data.getStringExtra(USERNAME);
         if ((temp_username == null) || (temp_username.length() < 1)) {
             getUserName();
         } else {
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         sp_editor = sp.edit();
-        sp_editor.putString("username", user_info.getUsername()).apply();
+        sp_editor.putString(USERNAME, user_info.getUsername()).apply();
         registerNewUsername();
     }
 
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void getUserName() {
-        user_info.setUsername( sp.getString("username", null));
+        user_info.setUsername( sp.getString(USERNAME, null));
         if ((user_info.getUsername() == null) || (user_info.getUsername().length() < 1)) {
             Intent intent = new Intent(MainActivity.this, NewClient.class);
             startActivityForResult(intent, 0);
