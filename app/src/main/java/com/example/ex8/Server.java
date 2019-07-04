@@ -15,15 +15,15 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 class Server {
 
-    final String LOG_TAG = "CS";
-//    final String SERVER_URL = "https://hujipostpc2019.pythonanywhere.com";
-//    private final String TOKEN_URL = "https://hujipostpc2019.pythonanywhere.com/users/$/token/";
-//    private final String USER_INFO_URL = "https://hujipostpc2019.pythonanywhere.com/user/";
-//    private final String EDIT_URL = "https://hujipostpc2019.pythonanywhere.com/user/edit/";
-    private final static String SERVER_URL = "http://172.29.112.117:5678/";
-    private final static String TOKEN_URL = "http://172.29.112.117:5678/users/$/token/";
-    private final static String USER_INFO_URL = "http://172.29.112.117:5678/user/";
-    private final static String EDIT_URL = "http://172.29.112.117:5678/user/edit/";
+    private final static String LOG_TAG = "CS";
+    private final static String SERVER_URL = "https://hujipostpc2019.pythonanywhere.com";
+    private final static String TOKEN_URL = "https://hujipostpc2019.pythonanywhere.com/users/$/token/";
+    private final static String USER_INFO_URL = "https://hujipostpc2019.pythonanywhere.com/user/";
+    private final static String EDIT_URL = "https://hujipostpc2019.pythonanywhere.com/user/edit/";
+//    private final static String SERVER_URL = "http://172.29.112.117:5678/";
+//    private final static String TOKEN_URL = "http://172.29.112.117:5678/users/$/token/";
+//    private final static String USER_INFO_URL = "http://172.29.112.117:5678/user/";
+//    private final static String EDIT_URL = "http://172.29.112.117:5678/user/edit/";
 
     private ClientInfo clientInfo;
     private OkHttpClient httpClient;
